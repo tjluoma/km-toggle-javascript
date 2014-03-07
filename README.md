@@ -13,3 +13,9 @@ Press <kbd>⌘</kbd> + <kbd>J</kbd> and Keyboard Maestro will enable or disable 
 
 If there is a current page in Safari, it will be reloaded.
 
+### Requirements
+
+Both of these macros require that Safari has “Show Develop menu in menu bar” is checked, as shown:
+
+![](Safari-Advanced-Preferences.jpg)
+
