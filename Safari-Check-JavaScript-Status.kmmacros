@@ -366,7 +366,7 @@ When you have finished reading this, you can close the window by clicking the OK
 			</dict>
 		</array>
 		<key>Name</key>
-		<string>"Safari Only" Keyboard Maestro Macros</string>
+		<string>"Safari Only" Macros</string>
 		<key>Targeting</key>
 		<dict>
 			<key>Targeting</key>

@@ -29,7 +29,7 @@ Since these macros are intended only to be used in Safari, they will be placed i
 
 As you can see, the “Group” in Keyboard Maestro has been designated to only be available in Safari.
 
-(The other two macros “Merge All Windows” and “ATLA Save” are other macros I have made, but are not included here.)
+*(The other two macros “Merge All Windows” and “ATLA Save” are other macros I have made, but are not included here.)*
 
 ### Requirements
 
