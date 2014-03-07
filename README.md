@@ -27,5 +27,5 @@ If there is a current page in Safari, it will be reloaded.
 
 Both of these macros require that Safari has “Show Develop menu in menu bar” is checked, as shown:
 
-![](Safari-Advanced-Preferences.jpg)
+![](screenshot.jpg)
 
