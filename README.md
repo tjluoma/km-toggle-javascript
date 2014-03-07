@@ -21,11 +21,19 @@ If there is a current page in Safari, it will be reloaded.
 
 3.	Import them into Keyboard Maestro by double-clicking on them, or by launching **Keyboard Maestro.app** and choosing **File » Import Macros…** from the menu bar.
 
+### “For Safari Only”
 
+Since these macros are intended only to be used in Safari, they will be placed into a new “Group” in Keyboard Maestro called **“Safari Only” Macros** as shown here:
+
+![](img/KM-Safari-only-lg.jpg)
+
+As you can see, the “Group” in Keyboard Maestro has been designated to only be available in Safari.
+
+(The other two macros “Merge All Windows” and “ATLA Save” are other macros I have made, but are not included here.)
 
 ### Requirements
 
 Both of these macros require that Safari has “Show Develop menu in menu bar” is checked, as shown:
 
-![](screenshot.jpg)
+![](img/Safari-Advanced-Preferences.jpg)
 
