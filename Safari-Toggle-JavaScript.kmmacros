@@ -218,7 +218,7 @@ When you have finished reading this, you can close the window by clicking the OK
 									<key>MenuConditionSelectionType</key>
 									<string>Is</string>
 									<key>MenuConditionType</key>
-									<string>IsEnabled</string>
+									<string>IsMarked</string>
 									<key>MenuModifiers</key>
 									<integer>256</integer>
 									<key>MenuShortcut</key>
@@ -233,30 +233,106 @@ When you have finished reading this, you can close the window by clicking the OK
 						<key>ElseActions</key>
 						<array>
 							<dict>
+								<key>Conditions</key>
+								<dict>
+									<key>ConditionList</key>
+									<array>
+										<dict>
+											<key>ConditionType</key>
+											<string>Menu</string>
+											<key>MenuConditionSelectionType</key>
+											<string>Is</string>
+											<key>MenuConditionType</key>
+											<string>IsNotMarked</string>
+											<key>MenuModifiers</key>
+											<integer>256</integer>
+											<key>MenuShortcut</key>
+											<string>C</string>
+											<key>MenuTitle</key>
+											<string>Disable JavaScript</string>
+										</dict>
+									</array>
+									<key>ConditionListMatch</key>
+									<string>All</string>
+								</dict>
+								<key>ElseActions</key>
+								<array>
+									<dict>
+										<key>IsActive</key>
+										<true/>
+										<key>IsDisclosed</key>
+										<true/>
+										<key>MacroActionType</key>
+										<string>Notification</string>
+										<key>SoundName</key>
+										<string>Funk</string>
+										<key>Subtitle</key>
+										<string>(from Keyboard Maestro)</string>
+										<key>Text</key>
+										<string>Cannot toggle JavaScript (menu not enabled).</string>
+										<key>Title</key>
+										<string>%ExecutingMacro% failed</string>
+									</dict>
+									<dict>
+										<key>Action</key>
+										<string>CancelThisMacro</string>
+										<key>IsActive</key>
+										<true/>
+										<key>IsDisclosed</key>
+										<true/>
+										<key>MacroActionType</key>
+										<string>Cancel</string>
+									</dict>
+								</array>
 								<key>IsActive</key>
 								<true/>
 								<key>IsDisclosed</key>
 								<true/>
 								<key>MacroActionType</key>
-								<string>Notification</string>
-								<key>SoundName</key>
-								<string>Funk</string>
-								<key>Subtitle</key>
-								<string>(from Keyboard Maestro)</string>
-								<key>Text</key>
-								<string>Cannot toggle JavaScript (menu not enabled).</string>
-								<key>Title</key>
-								<string>%ExecutingMacro% failed</string>
-							</dict>
-							<dict>
-								<key>Action</key>
-								<string>CancelThisMacro</string>
-								<key>IsActive</key>
+								<string>IfThenElse</string>
+								<key>ThenActions</key>
+								<array>
+									<dict>
+										<key>IsActive</key>
+										<true/>
+										<key>IsDisclosed</key>
+										<true/>
+										<key>MacroActionType</key>
+										<string>SelectMenuItem</string>
+										<key>Menu</key>
+										<array>
+											<string>Develop</string>
+											<string>Disable JavaScript</string>
+										</array>
+										<key>StopOnFailure</key>
+										<true/>
+										<key>TargetApplication</key>
+										<dict>
+											<key>BundleIdentifier</key>
+											<string>com.apple.Safari</string>
+											<key>Name</key>
+											<string>Safari</string>
+											<key>NewFile</key>
+											<string>/Applications/Safari.app</string>
+										</dict>
+										<key>TargetingType</key>
+										<string>Specific</string>
+									</dict>
+									<dict>
+										<key>IsActive</key>
+										<true/>
+										<key>IsDisclosed</key>
+										<true/>
+										<key>MacroActionType</key>
+										<string>SetVariableToText</string>
+										<key>Text</key>
+										<string>JavaScript is now OFF</string>
+										<key>Variable</key>
+										<string>SAFARI_JAVASCRIPT_TOGGLE</string>
+									</dict>
+								</array>
+								<key>TimeOutAbortsMacro</key>
 								<true/>
-								<key>IsDisclosed</key>
-								<true/>
-								<key>MacroActionType</key>
-								<string>Cancel</string>
 							</dict>
 						</array>
 						<key>IsActive</key>
@@ -292,6 +368,18 @@ When you have finished reading this, you can close the window by clicking the OK
 								</dict>
 								<key>TargetingType</key>
 								<string>Specific</string>
+							</dict>
+							<dict>
+								<key>IsActive</key>
+								<true/>
+								<key>IsDisclosed</key>
+								<true/>
+								<key>MacroActionType</key>
+								<string>SetVariableToText</string>
+								<key>Text</key>
+								<string>JavaScript is now ON</string>
+								<key>Variable</key>
+								<string>SAFARI_JAVASCRIPT_TOGGLE</string>
 							</dict>
 						</array>
 						<key>TimeOutAbortsMacro</key>
@@ -334,9 +422,9 @@ When you have finished reading this, you can close the window by clicking the OK
 								<key>Subtitle</key>
 								<string>%ExecutingMacro% in Keyboard Maestro</string>
 								<key>Text</key>
-								<string>No page to reload</string>
+								<string>%Variable%SAFARI_JAVASCRIPT_TOGGLE%</string>
 								<key>Title</key>
-								<string>JavaScript status toggled</string>
+								<string>No Page To Reload</string>
 							</dict>
 						</array>
 						<key>IsActive</key>
@@ -359,15 +447,15 @@ When you have finished reading this, you can close the window by clicking the OK
 								<key>Subtitle</key>
 								<string>%ExecutingMacro% in Keyboard Maestro</string>
 								<key>Text</key>
-								<string>Reloading current page</string>
+								<string>%Variable%SAFARI_JAVASCRIPT_TOGGLE%</string>
 								<key>Title</key>
-								<string>JavaScript status toggled</string>
+								<string>Reloading Page</string>
 							</dict>
 							<dict>
 								<key>IsActive</key>
 								<true/>
 								<key>IsDisclosed</key>
-								<true/>
+								<false/>
 								<key>MacroActionType</key>
 								<string>SelectMenuItem</string>
 								<key>Menu</key>
@@ -397,9 +485,9 @@ When you have finished reading this, you can close the window by clicking the OK
 				<key>IsActive</key>
 				<true/>
 				<key>ModificationDate</key>
-				<real>415861832.483181</real>
+				<real>415902786.44489902</real>
 				<key>Name</key>
-				<string>Toggle JavaScript in Safari</string>
+				<string>Safari - Toggle JavaScript</string>
 				<key>Triggers</key>
 				<array>
 					<dict>
