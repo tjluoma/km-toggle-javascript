@@ -15,9 +15,9 @@ If there is a current page in Safari, it will be reloaded.
 
 ### Downloading and installing Keyboard Maestro macros
 
-1.	Right-click (or control-click) the `.kmmacros` files and save them.
+1.	Right-click (or control-click) the `.kmmacros` files and save them, ***or*** [download a zip file](https://github.com/tjluoma/km-toggle-javascript/archive/master.zip) with both of them.
 
-2.	Note that your browser may add a “.txt” to the filename, but Keyboard Maestro needs the extension to be “.kmmacros”.
+2.	Note that if you download the `.kmmacros` files, your browser may add a “.txt” to the filename, but Keyboard Maestro needs the extension to be “.kmmacros”.
 
 3.	Import them into Keyboard Maestro by double-clicking on them, or by launching **Keyboard Maestro.app** and choosing **File » Import Macros…** from the menu bar.
 
